@@ -16,7 +16,7 @@ Data is pulled from the public MLB Stats API (`statsapi.mlb.com`), matching big 
 
 Past seasons (2005–2026) are pre-cached in `history.json` so historical records load instantly without spamming the API, while new seasons are fetched dynamically.
 
-## [Check it out!](trnjak.github.io/waaaa)
+## [Check it out!](https://trnjak.github.io/waaaa/)
 
 
 
