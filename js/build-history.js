@@ -44,9 +44,9 @@ async function fetchSeason(year) {
             return null;
         }
 
-        const mlbPace = +(mlbRecord.pct * 162).toFixed(2);
-        const aaaPace = +(aaaRecord.pct * 162).toFixed(2);
-        const waaaa = +(mlbPace - aaaPace).toFixed(2);
+        const mlbPace = mlbRecord.pct * 162;
+        const aaaPace = aaaRecord.pct * 162;
+        const waaaa = mlbPace - aaaPace;
 
         return {
             year,
