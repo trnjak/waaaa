@@ -6,7 +6,7 @@ const cache = {};
 const params = new URLSearchParams(window.location.search);
 const initSeason = Number(params.get('season'));
 
-let defaultSeason = seasons[0];
+let defaultSeason = new Date().getMonth() >= 9 ? seasons[0] : seasons[1]; // check if regular season is over (literally just check if it's october)
 let currentSeason = seasons.includes(initSeason) ? initSeason : defaultSeason;
 let selectedAbbr = params.get('team')?.toUpperCase() || null;
 let sortCol = 'waaaa';
@@ -319,6 +319,7 @@ async function scanHistory() {
     const bindRecord = (elementId, record) => {
         const element = document.getElementById(elementId);
         if (!record) return;
+	if (record.year == maxYear && defaultSeason != maxYear) return; // skip if regular season is not over
         element.textContent = `${record.year} ${record.mlbAbbr} (${formatWaaaa(record.waaaa)})`;
         element.onclick = async (event) => {
             event.preventDefault();
