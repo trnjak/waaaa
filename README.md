@@ -7,7 +7,7 @@ For example, if an MLB team is on pace for 95 wins and its AAA affiliate is on p
 
 A high number might reflect a strong MLB roster, a rebuilding minor-league team, or combination of factors. A low number doesn't necessarily mean an organization is doing anything particularly well, either. 
 
-It's a descriptive stat, not a measure of any competence. Don't take it too seriously. :3
+It's a descriptive stat, not a measure of any significant team competence. Don't take it too seriously. :3
 
 Everything is written in vanilla JavaScript and renders a custom SVG scatter plot with zero external dependencies, so it's super fast and easy to tinker with. 
 
