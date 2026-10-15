@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Marko Trnjak">
+	<title>WAAAA</title>
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+	<nav class="corner-nav">
+            <a href="/index.html">/home</a>
+            <a href="index.html" class="active">/waaaa</a>
+	</nav>
+
+	<div class="bg-star"></div>
+
+	<main class="container wide">
+            <section class="card wide-card">
+		<div class="content">
+                    <header class="top-bar">
+			<div class="intro">
+                            <p><strong>WAAAA (Wins Above Triple-A)</strong> is an MLB team's 162-game win pace minus their Triple-A affiliate's 162-game pace.</p>
+			</div>
+			<div class="controls">
+                            <label for="season-select">Season:</label>
+                            <select id="season-select"></select>
+			</div>
+                    </header>
+
+                    <hr>
+
+                    <div id="records" class="records">
+			<span>Highest: <a href="#" id="rec-max">...</a></span>
+			<span>Lowest: <a href="#" id="rec-min">...</a></span>
+			<span>Lowest Playoff (*): <a href="#" id="rec-po">...</a></span>
+                    </div>
+
+                    <hr>
+
+                    <div id="status">Loading...</div>
+
+                    <div id="main-view" class="main-view" style="display: none;">
+			<div class="panel" style="min-width: 0;">
+                            <svg id="plot" viewBox="0 0 540 440" style="width: 100%; height: auto; display: block; max-width: 100%;"></svg>
+                            <div class="plot-legend">
+				<span class="legend-item"><span class="legend-dot playoff"></span> Postseason (*)</span>
+				<span class="legend-item"><span class="legend-dot"></span> Missed playoffs</span>
+				<span class="legend-item"><span class="legend-line"></span> WAAAA = 0</span>
+                            </div>
+                            <div id="selected-info" class="selected-info">&nbsp;</div>
+			</div>
+
+			<div class="panel" style="min-width: 0;">
+                            <div class="table-wrap">
+				<table>
+                                    <thead>
+					<tr>
+                                            <th data-col="mlbName">MLB Club</th>
+                                            <th data-col="aaaName">AAA Affiliate</th>
+                                            <th data-col="mlbWins" class="num">W-L</th>
+                                            <th data-col="aaaPace" class="num">AAA (162)</th>
+                                            <th data-col="waaaa" class="num">WAAAA</th>
+					</tr>
+                                    </thead>
+                                    <tbody id="tbody"></tbody>
+				</table>
+                            </div>
+			</div>
+                    </div>
+		</div>
+            </section>
+	</main>
+
+	<script src="js/waaaa.js"></script>
+    </body>
+</html>
